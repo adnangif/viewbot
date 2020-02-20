@@ -73,4 +73,4 @@ modules used:
 
 
 wala! you are good to go. Now edit the CAPITALIZED variables in mini_T.py
-The 'T' in mini_T.py stands for treasure 😌
+## The 'T' in mini_T.py stands for treasure 😌
