@@ -48,9 +48,9 @@ please don't run and install the dependencies manually.
 
 
 ## xvfb is essential for headless chrome.
-## so do  this 
+so do  this 
 
-##sudo apt install xvfb
+## sudo apt install xvfb
 
 ## then install google chrome, 
 
