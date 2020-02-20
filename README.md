@@ -41,11 +41,13 @@ self.PROXY=False if you don't want to
 
 (do this if you are lazy enough)you can run rat_T.py and let it do everything for you. rat_T.py needs sudo permission. It will automatically download chrome , chromedriver and mini_T.py and run mini_T.py all the requirements canbe installed using rat_T.py. to install requirements simply run rat_T.py as sudo. It is recommended to use a cloud server that is running ubuntu. And you should already have python3.7 installed
 
-Know this, same results can be achieved without rat_T.py
-rat_T.py installs a lot of things. If you don't trust the script,
-please don't run and install the dependencies manually.
+Know this, same results can be achieved without rat_T.py.
+rat_T.py installs a lot of things. so If you don't trust the script,
+please don't run it. 
 
 
+
+Just install the dependencies manually.
 
 ## xvfb is essential for headless chrome.
 so do  this 
