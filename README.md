@@ -48,12 +48,17 @@ please don't run and install the dependencies manually.
 
 
 ## xvfb is essential for headless chrome.
-## so install this 
-sudo apt install xvfb
-then install google chrome, 
-download chromedriver and put chromedriver in '/usr/bin/'
+## so do  this 
+
+##sudo apt install xvfb
+
+## then install google chrome, 
+
+## download chromedriver and put chromedriver in '/usr/bin/'
+
 change permission of chromedriver: 
-sudo chmod +rx /usr/bin/chromedriver
+
+## sudo chmod +rx /usr/bin/chromedriver
 
 
 
@@ -61,10 +66,10 @@ then pip install the modules used.
 
 modules used:
 
-requests
-selenium
-fake-useragent
-pyvirtualdisplay
+## requests
+## selenium
+## fake-useragent
+## pyvirtualdisplay
 
 
 wala! you are good to go. Now edit the CAPITALIZED variables in mini_T.py
