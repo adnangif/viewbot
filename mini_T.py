@@ -192,10 +192,6 @@ class YouViewer:
     def count_time(self):
         return time()-self.time_counter
 
-    def shutdown_computer(self):
-        print('shutting down computer')
-        self.log_info('shutting down computer')
-        subprocess.run('shutdown/s',shell=True)
 
     #configure the chrome        
     def starting_preparation(self):
