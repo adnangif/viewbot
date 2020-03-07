@@ -21,46 +21,47 @@ class YouViewer:
 
     def __init__(self):
 
-        #LOG INFO TITLE
+        #log file title everytime script starts
         self.log_info(f'.......event started.....local TIME : {ctime()}')
         
         # CONFIGURABLE variables
         self.MAX_WAIT = 30
         self.MAX_ERROR = 200
-        self.NUM_OF_VIEWS = 300
-        self.HEADLESS = False
+        self.NUM_OF_VIEWS = 300 #increase this
         self.WATCH_TIME_LIMIT = 300
-        self.SHUTDOWN_WHEN_FINISHED = False
-        self.BROWSER = 'chrome'
-        self.DEBUG = False        
-        self.PROXY = True
+        self.BROWSER = 'chrome' 
+      
+        self.PROXY = False
         self.PROXY_LIST = []
         self.CONSUMED_PROXIES = 200
         self.PROXY_TIMEOUT = 3
         
-        #visited when DEBUG is set true
-        self.CUSTOM_URL = 'https://www.youtube.com/watch?v=d64hfj4'
+  
         
-        ####replace these with your desired strings####
+####replace these with your channel information####
+
         #the title of targetted video
         self.VIDEO_TITLE = 'Joker song 2019'
         
-        #after roaming this is searched
+        #give your channel name here
         self.SEARCH_BY = "Muhammad fahim joker"
-        #this is used for finding channel from search list
+
+        #first two to three words of your channel description used for finding your channel from search list
         self.CHANNEL_DESCRIPTION='hi.'
 
 
-        #this variable is used for counting how much time has passed
+        #stopwatch
         self.time_counter = time()
 
      
-        #starting everything
+        
         if self.PROXY:
             self.get_proxy()
+
             
 ####################################
 
+    def begin_loop(self):
         self.NUM_OF_ERRORS = 0    
         for i in range(self.NUM_OF_VIEWS):
             try:
@@ -83,12 +84,7 @@ class YouViewer:
                 
          
                 if self.NUM_OF_ERRORS > self.MAX_ERROR:
-                    self.log_info('maximum error limit exceded')
-                    
-                    #shutdown
-                    if self.SHUTDOWN_WHEN_FINISHED:
-                        self.shutdown_computer()
-                        
+                    self.log_info('maximum error limit exceded')   
                     raise SystemExit
 
         
@@ -96,9 +92,10 @@ class YouViewer:
 ############## __init__ method ends here ###############
     def main_func(self):
 
-        if not self.DEBUG:
+        if True:
 
             roaming = self.roam_randomly_to(what_to_search = self.SEARCH_BY)
+
             #customize this sector for best results
             if roaming:
                 element2 = self.view_xpath(f'//div[text()="{self.CHANNEL_DESCRIPTION}"]/preceding-sibling::h3/a')
@@ -128,37 +125,7 @@ class YouViewer:
                 self.roam_randomly_to()
                 
             
-##################################_______WHEN_DEBUG_IS_SET_TRUE________##########################this is run
-        if self.DEBUG:
-            roaming = self.roam_randomly_to(what_to_search = self.SEARCH_BY)
-            if roaming:
-                
-                
-                self.driver.get(self.CUSTOM_URL)
-                sleep(self.WATCH_TIME())
-            
-            else:
-                print('View did not complete')
 
-
-
-            
-
-
-
-
-
-            ##### finished DEBUGGING
-            print(f'len of proxy list: {len(self.PROXY_LIST)}')
-            print(f'finished in {self.count_time()}')
-            print(f'No of errors :{self.NUM_OF_ERRORS}')
-            
-        
-        
-        
-        
-        
-        
         
         
 ####################    methods start here    ################################        
@@ -183,7 +150,7 @@ class YouViewer:
             print(str(e))
             raise e
     
-########### Only call this function if you already called get_proxy
+
 
     def random_proxy(self):
         
@@ -254,7 +221,7 @@ class YouViewer:
             self.driver = webdriver.Chrome(chrome_options = self.chrome_options)
             self.driver.get('https://www.youtube.com')    
 
-#log_info for later use
+    #log_info for later use
     def log_info(self,comment):
         with open('YTlog.txt',mode='a') as writer:
             writer.write(comment+'\n')
@@ -351,4 +318,5 @@ if __name__ == '__main__':
     display = Display(visible=0, size=(1024, 768))
     display.start()
     runner = YouViewer()
+    runner.begin_loop()
     display.stop()
