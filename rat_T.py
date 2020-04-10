@@ -53,5 +53,5 @@ print('finished....setup,NOW DOWNLOADING SCRIPT....')
 run('wget -c https://docs.google.com/uc?id=1RZAJDkWDV0NZftjzhBGn5cXudS5z79o5 -O mini_bot.py',shell=True)
 print('done.....')
 
-run('python3.7 mini_bot.py',shell=True)
+#run('python3.7 mini_bot.py',shell=True)
 sleep(30)
