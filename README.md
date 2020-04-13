@@ -1,4 +1,6 @@
 # viewbot
+# does not work anymore wait for ytbot to complete
+
 increase youtube view 
 
 edit the first few lines of mini_T.py by changing the CAPITALIZED variables values as desired.
