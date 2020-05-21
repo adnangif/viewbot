@@ -1,7 +1,7 @@
-# viewbot
-# does not work anymore
+
+# viewbot does not work anymore
 # USE YTBOT
-# ytbot is now complete
+# ytbot is now complete. HAVE FUN!
 
 increase youtube view 
 
